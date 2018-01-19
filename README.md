@@ -1,2 +1,2 @@
-### HardPack-of-algorithms-in-C
+### HeavyPack-of-algorithms-in-C
 Sorting, searching, graphs, progression sorting, data structures, etc 
