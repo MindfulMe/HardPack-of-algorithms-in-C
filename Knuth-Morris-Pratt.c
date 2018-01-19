@@ -5,7 +5,7 @@ void failure(char* pattern, int* f);
 int kmp(char* t, char* p);
 
 int* init_array(int size) {
-  int* arr = (int*)malloc(size * sizeof(int));
+  int* arr = (int*)malloc(size * sizeof(int)); // alocating memory
   int i;
   for(i = 0; i < size; i++) {
     arr[i] = 0;
@@ -30,25 +30,25 @@ int kmp(char* t, char* p) {
   int n = strlen(t);
 
   int* f = init_array(m); // Failure function values.
-  int i = 0;
-  int j = 0;
+  int i = 0;// rat1
+  int j = 0;//rat2
 
   while (i < n) {
     if (t[i] == p[j]) {
       if (j == m - 1) {
-        return i - j;
+        return i - j; //giving back a number as a result of the pattern-length bias 
       }
       else {
-        i += 1;
-        j += 1;
+        i += 1;//proceed
+        j += 1;//proceed
       }
     }
     else {
       if (j > 0) {
-        j = f[j-1];
+        j = f[j-1]; // asigning 0 to the j, kinda bias on a length of the pattern 
       }
       else {
-        i += 1;
+        i += 1; //proceed
       }
     }
   }
