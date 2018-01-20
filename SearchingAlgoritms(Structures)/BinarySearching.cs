@@ -24,8 +24,13 @@ namespace Binary
 
         public static void Main(string[] args)
         {
-            int[] arr = { 3, 4, 23, 42, 77, 100 };
-            int x = 42;
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[size];
+            for(int i=0;i<size;i++)
+            {
+                arr[i]=Convert.ToInt32(Console.ReadLine());
+            }
+            int x = Convert.ToInt32(Console.ReadLine());
             int result = binarySearch(arr, 0, arr.Length - 1, x);
             if (result == -1)
                 Console.WriteLine("Element not found");
